@@ -3,14 +3,14 @@
 #   Zachary Robinson
 
 # We define our coordinate system as a 3 by infinity grid,
-# with starting point p at the center (0,0)
-# grid goes from (-inf,-1) to (inf,1)
+# with starting point p at any point farthest left (0,-1) (0,0) (0,1)
+# grid goes from (0,-1) to (inf,1)
 class gridwalk:
     validSet = [] # Number of valid walks already determined for n
     newSet = [] # Number of valid walks being determined for n+1
 
     def __init__(self):
-        self.validSet.append([(0,0)]) # Start by filling the valid set with all walks of length 0
+        self.validSet += [[(0,-1)],[(0,0)],[(0,1)]] # Start by filling the valid set with all walks of length 0
     
     # Count the number of self-avoiding walks of length n possible given the coordinate system
     def count(self, n):
@@ -31,7 +31,7 @@ class gridwalk:
     
     # Check a walk to see if it is within the coordinate range and self-avoiding
     def checkWalk(self, walk):
-        if walk[-1][1] > 1 or walk[-1][1] < -1:
+        if walk[-1][1] > 1 or walk[-1][1] < -1 or walk[-1][0] < 0:
             return False
         if walk[-1] in walk[:-1]:
             return False
@@ -39,7 +39,7 @@ class gridwalk:
 
 def main():
     walker = gridwalk()
-    result = walker.count(12)
+    result = walker.count(2)
     print(result)
 
 if __name__ == "__main__":

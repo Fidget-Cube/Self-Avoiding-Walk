@@ -6,6 +6,9 @@
 startTable = [0, 0.5, 1, 1, 2, 2.5, 1, 2, 2.5, 1.5, 2, 2, 2.5, 0.5, 1, 1, 2, 2.5, 1, 2, 2.5, 1.5, 2, 2, 2.5, 0.5, 1, 1, 1, 1, 1.5, 2, 1.5, 2]
 # Transition table for each starting column (there are 27 states)
 startTransitions = [0, 1, 0, 9, 9, 21, 10, 10, 20, 2, 0, 16, 3, 3, 0, 17, 17, 21, 12, 12, 23, 2, 0, 11, 1, 2, 0, 0, 16, 11, 1, 10, 3, 12]
+# Transition from startTransitions to columns other than the starting column, incomplete 
+mainTransitions =  [[], [0,1,2,3,4,5,6,17,19,20,22,24,25,27], [49,50,51,52,53,55,57,59,61,63], [8,9,10,11,12,14,36,38,39,41,43,44,46], 
+                    [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
 
 
 # We define our coordinate system as a 3 by infinity grid,

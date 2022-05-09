@@ -1,6 +1,7 @@
 # Author(s)
 #   Max vonBlankenburg
 #   Zachary Robinson
+import sys
 
 # We define our coordinate system as a 3 by infinity grid,
 # with starting point p at any point farthest left (0,-1) (0,0) (0,1)
@@ -38,8 +39,9 @@ class gridwalk:
         return True
 
 def main():
+    args = sys.argv[1:]
     walker = gridwalk()
-    result = walker.count(2)
+    result = walker.count(int(args[0]))
     print(result)
 
 if __name__ == "__main__":

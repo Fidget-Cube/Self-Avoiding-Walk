@@ -54,6 +54,8 @@ class gridwalk:
     
     # Calculates the number of valid walks of length "length"
     def walk(self):
+        if self.length == 0:
+            return 3
         runningTotal = 0
         # Our oracle here is validSet[0], which is the final state of the DFA
         # Everything ending at validSet[0] with length "length" is a walk we want to count

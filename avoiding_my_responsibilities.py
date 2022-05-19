@@ -50,7 +50,6 @@ class gridwalk:
             for i in range(len(startTable)):
                 if startTable[i] <= self.length:
                     self.validSet[startTransitions[i]][int(startTable[i] * 2)] += 1
-            print(self.validSet[0])
     
     # Calculates the number of valid walks of length "length"
     def walk(self):
@@ -63,7 +62,6 @@ class gridwalk:
         # We continue this until there is no weight <= length * 2 in the final state.
         while True:
             self.updateSet()
-            print(self.validSet[0])
             flag = False
             for i in self.validSet[0]:
                 if i != 0:

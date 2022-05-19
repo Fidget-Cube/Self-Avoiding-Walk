@@ -91,7 +91,7 @@ class gridwalk:
 def main():
     args = sys.argv[1:]
     if len(args) != 1:
-        print("Format: python3 avoiding_my_responsibilities.py <length>")
+        print("Format: python3 self_avoiding_DFA.py <length>")
     walker = gridwalk(int(args[0]))
     count = walker.walk()
     print(count)
